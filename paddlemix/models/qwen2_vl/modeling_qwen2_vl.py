@@ -368,10 +368,6 @@ class VisionFlashAttention2(nn.Layer):
                 q.astype("bfloat16"),  # 不支持float32
                 k.astype("bfloat16"),
                 v.astype("bfloat16"),
-                # attn_mask=attention_mask,
-                # scale=softmax_scale,  # not softmax_scale=
-                # dropout=dropout,
-                # causal=causal,
                 is_varlen=True,
                 batch_size=1,
                 seq_length=seq_length,
@@ -758,7 +754,6 @@ class Qwen2VLFlashAttention2(Qwen2VLAttention):
                     key_states,  # [5998, 8, 128]
                     value_states,  # [5998, 8, 128]
                     attn_mask=attention_mask,
-                    # scale=softmax_scale,  # not softmax_scale=
                     dropout=dropout,
                     causal=causal,
                     is_varlen=True,
@@ -770,7 +765,6 @@ class Qwen2VLFlashAttention2(Qwen2VLAttention):
                     key_states.astype("bfloat16"),  # [5998, 8, 128]
                     value_states.astype("bfloat16"),  # [5998, 8, 128]
                     attn_mask=attention_mask,
-                    # scale=softmax_scale,  # not softmax_scale=
                     dropout=dropout,
                     causal=causal,
                 )
