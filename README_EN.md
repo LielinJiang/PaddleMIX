@@ -34,20 +34,26 @@
 
 
 ## 📰 News
+
 **🔥PaddleMIX Development Project Challenge (November 21 - December 22, 2024)**
 
-- ✨"Experience Officer Recruitment" PaddleMIX Development Project Challenge
-Click the link to sign up 🔗: https://aistudio.baidu.com/activitydetail/1503019366
-🏆Submit to the PaddleGalaxy Community Project Hall - get certified as a PaddleMIX Experience Officer and receive JD.com gift cards as rewards
-Welcome your submissions!
+**🔥2024.11.21 - 2024.12.22 PaddleMIX Development Project Challenge (Ended)**
+
+- ✨「Experience Officer Recruitment」PaddleMIX Development Project Challenge
+Click the link to register 🔗: [https://aistudio.baidu.com/activitydetail/1503019366](https://aistudio.baidu.com/activitydetail/1503019366)
+🏆 Submit to the PaddlePaddle Galaxy Community Project Hall to be featured and receive a PaddleMIX Experience Officer certification certificate and JD.com card incentives.
+Everyone is welcome to submit～
+
+<details>
+<summary>Click to view the event poster</summary>
 <p align="center">
 <img src='https://github.com/user-attachments/assets/27e0bbe3-0ff8-49ef-bd39-81a31a2b288b' width="25%">
 </p>
-
-- 🎉 The PaddleMIX multimodal large model toolkit releases version 2.1! On October 31 (Thursday) at 20:00, Baidu development engineers provided a detailed interpretation of the toolkit updates, as well as the implementation details and case applications of PP-InsCapTagger, the multimodal data capability labeling model.
+</details>
 
 ## 📣 Latest Developments
 
+**🎉 2024.12.17 Support for [InternVL2_5 (1B, 2B, 4B, 8B)](./paddlemix/examples/internvl2) inference**
 
 **🎉 2024.11.27 Added support for [Janus/JanusFlow](./paddlemix/examples/janus) inference**
 
@@ -61,6 +67,9 @@ Welcome your submissions!
 * 🌟 Since the launch of our Large Model Suite Premium Project Collection activity on September 6th, we have received 30 high-quality developer projects. Among them, 25 premium projects have successfully passed the platform evaluation and been featured.
 
 * 🙏 We sincerely thank all developers for their wonderful creations based on our suite! 🚀 We cordially invite you to share your creativity as well - welcome to publish your tutorials on public web pages or in the [PaddlePaddle AI Studio](https://aistudio.baidu.com/aistudio/community/multimodal?from=singlemessage) community!
+
+<details>
+<summary>Click to expand more</summary>
 
 **🔥 PaddleMIX v2.1 Released on 2024.10.11**
 * Supports the [PaddleNLP 3.0 beta](https://github.com/PaddlePaddle/PaddleNLP/releases/tag/v3.0.0-beta0) version, allowing early access to its latest features.
@@ -79,6 +88,9 @@ Welcome your submissions!
 * Added distributed training capabilities for vision-language pre-training models, and BLIP-2 now supports trillion-scale training.
 * Introduced the cross-modal application pipeline [AppFlow](./applications/README.md), which supports 11 cross-modal applications such as automatic annotation, image editing, and audio-to-image with one click.
 * [PPDiffusers](./ppdiffusers/README.md) released version 0.19.3, adding SDXL and related tasks.
+</details>
+
+
 ---
 
 ## 🌈 Introduction
@@ -151,7 +163,7 @@ conda create -n paddlemix python=3.10 -y
 conda activate paddlemix
 ```
 
-### 3. Install PaddlePaddle
+### 3. ‼️ Install PaddlePaddle
 
 #### Method 1: One-click Installation (Recommended for GPU/CPU)
 
@@ -162,17 +174,14 @@ sh build_paddle_env.sh
 ```
 
 #### Method 2: Manual Installation
-For detailed PaddlePaddle installation instructions, please refer to [Installation](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/develop/install/pip/linux-pip.html).
+For detailed instructions on installing PaddlePaddle, please refer to the [Installation Guide](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/develop/install/pip/linux-pip.html).
 
-### 4. Install Dependencies
+### 4. ‼️ Install Dependencies
 
-#### Method 1: One-click Installation (Recommended)
-
-Run the following command to automatically install all necessary dependencies:
+#### Method 1: One-Click Installation (Recommended)
 ```
 sh build_env.sh
 ```
-
 #### Method 2: Manual Installation
 ```bash
 # Install PaddleMIX
@@ -181,15 +190,30 @@ pip install -e .
 cd ppdiffusers
 pip install -e .
 cd ..
+
+### 5. ‼️ Verify Installation
+
+Run the following command to verify your installation:
+```bash
+sh check_env.sh
 ```
 
-### 5. Install Custom Operators (Optional)
+Recommended versions for environment and dependencies:
+- paddlepaddle: 3.0.0b2 or develop version
+- paddlenlp: 3.0.0b2
+- ppdiffusers: 0.29.0
+- huggingface_hub: 0.23.0
+
+### 6. Install Custom Operators (Optional)
 * Some models require custom operators (FastLayerNorm, FusedLayerNorm), such as EVA-CLIP, DIT_LLAMA, etc.
-* Skip this step for non-CUDA environments (e.g., Ascend environments)
-```bash
+* Skip this step for non-CUDA environments (e.g., Ascend NPU)
+* ```bash
 cd paddlemix/external_ops
 python setup.py install
 ```
+
+
+
 
 #### Method 2: Manual Installation (Please refer to build_env.sh)
 ## 🔥 Tutorials

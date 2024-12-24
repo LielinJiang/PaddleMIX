@@ -34,20 +34,27 @@
 
 
 ## 📰新闻
-**🔥2024.11.21日 - 2024.12.22日  PaddleMIX开发项目挑战**
+**🔥2024.11.21日 - 2024.12.22日  PaddleMIX开发项目挑战（已结束）**
 
 - ✨「体验官招募」PaddleMIX开发项目挑战
 点击链接报名🔗：https://aistudio.baidu.com/activitydetail/1503019366
 🏆投稿至飞桨星河社区项目大厅，加精获得PaddleMIX体验官认证证书及京东卡激励
 欢迎大家投稿～
+<details>
+<summary>点击展开活动海报</summary>
 <p align="center">
 <img src='https://github.com/user-attachments/assets/27e0bbe3-0ff8-49ef-bd39-81a31a2b288b'  width="25%">
 </p>
-
+</details>
 
 ## 📣最新进展
 
 <!-- 📚《飞桨多模态大模型开发套件PaddleMIX 2.1 震撼发布》，图文音视频场景全覆盖，多模态高效助力产业创新。超大规模训练支持，覆盖图文预训练、文生图、跨模态视觉任务，覆盖金融、教育、电商、医疗等产业场景。8月8日（周四）20：00 带你直播了解多模态大模型最新架构，深度解析PaddleMIX高性能模型库，手把手演示LLaVA模型训推全流程。[报名链接](https://www.wjx.top/vm/wKqysjx.aspx?udsid=449688)   -->
+
+
+**🎉 2024.12.17 支持[GOT-OCR2_0](./paddlemix/examples/GOT_OCR_2_0)推理和训练**
+
+**🎉 2024.12.17 支持[InternVL2_5(1B、2B、4B、8B)](./paddlemix/examples/internvl2)推理**
 
 **🎉 2024.11.27 支持[Janus/JanusFlow](./paddlemix/examples/janus)推理**
 
@@ -62,6 +69,9 @@
 * 🌟 自9月6日发起大模型套件精品项目征集活动以来,我们收到了30个优质开发者项目,其中25个精品项目已通过平台评估并成功加精。
 
 * 🙏 衷心感谢各位开发者基于套件的精彩创作！🚀 诚挚邀请您也来分享您的创意 - 欢迎将教程发布到公开网页或[飞桨AI Studio](https://aistudio.baidu.com/aistudio/community/multimodal?from=singlemessage)社区！
+
+<details>
+<summary>点击展开更多</summary>
 
 **🔥2024.10.11 发布PaddleMIX v2.1**
 * 支持[PaddleNLP 3.0 beta](https://github.com/PaddlePaddle/PaddleNLP/releases/tag/v3.0.0-beta0)版本，抢先体验其最新功能。
@@ -81,6 +91,7 @@
 * 新增跨模态应用流水线[AppFlow](./applications/README.md)，一键支持自动标注，图像编辑，音生图等11种跨模态应用
 * [PPDiffusers](./ppdiffusers/README.md)发布 0.19.3 版本，新增SDXL及相关任务
 
+</details>
 
 ---
 
@@ -161,7 +172,7 @@ cd PaddleMIX
 conda create -n paddlemix python=3.10 -y
 conda activate paddlemix
 ```
-### 3. 安装PaddlePaddle
+### 3. ‼️安装PaddlePaddle
 
 #### 方法 1: 一键安装（GPU/CPU推荐）
 
@@ -174,7 +185,7 @@ sh build_paddle_env.sh
 #### 方法 2: 手动安装
 关于PaddlePaddle安装的详细教程请查看[Installation](https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/develop/install/pip/linux-pip.html)。
 
-### 4. 安装依赖
+### 4. ‼️安装依赖
 
 #### 方法 1: 一键安装（推荐）
 
@@ -192,7 +203,18 @@ cd ppdiffusers
 pip install -e .
 cd ..
 ```
-### 5. 安装自定义算子（可选）
+### 5. ‼️验证安装
+```bash
+sh check_env.sh
+
+环境和依赖推荐版本:
+- paddlepaddle: 3.0.0b2或develop版本
+- paddlenlp: 3.0.0b2
+- ppdiffusers: 0.29.0
+- huggingface_hub: 0.23.0
+```
+
+### 6. 安装自定义算子（可选）
 * 部分模型需要安装自定义算子（FastLayerNorm、FusedLayerNorm），例如EVA-CLIP、DIT_LLAMA等。
 * 非CUDA环境（例如昇腾环境）则跳过
 ```bash
@@ -287,10 +309,18 @@ python setup.py install
           <li><b>文生图</b></li>
         <ul>
            <li><a href="ppdiffusers/examples/stable_diffusion">Stable Diffusion</a></li>
+           <li><a href="ppdiffusers/ppdiffusers/pipelines/stable_diffusion_xl">SDXL</a></li>
            <li><a href="ppdiffusers/examples/dreambooth/README_sd3.md">Stable Diffusion 3 (SD3)</a></li>
             <li><a href="ppdiffusers/examples/controlnet">ControlNet</a></li>
             <li><a href="ppdiffusers/examples/t2i-adapter">T2I-Adapter</a></li>
             <li><a href="ppdiffusers/examples/text_to_image_laion400m">LDM</a></li>
+            <li><a href="ppdiffusers/ppdiffusers/pipelines/consistency_models">Consistency Models</a></li>
+            <li><a href="ppdiffusers/ppdiffusers/pipelines/deepfloyd_if">DeepFloyd IF</a></li>
+            <li><a href="ppdiffusers/ppdiffusers/pipelines/shap_e">Shap-E</a></li>
+            <li><a href="ppdiffusers/examples/kandinsky2_2">Kandinsky-2</a></li>
+            <li><a href="ppdiffusers/ppdiffusers/pipelines/wuerstchen">Würstchen</a></li>
+            <li><a href="ppdiffusers/ppdiffusers/pipelines/hotshot_xl">Hotshot-XL</a></li>
+            <li><a href="ppdiffusers/ppdiffusers/pipelines/latent_consistency_models">LCMs</a></li>
             <li><a href="ppdiffusers/ppdiffusers/pipelines/unidiffuser">Unidiffuser</a></li>
             <li><a href="ppdiffusers/examples/class_conditional_image_generation/DiT">DiT</a></li>
             <li><a href="ppdiffusers/examples/HunyuanDiT">HunyuanDiT</a></li>
@@ -298,10 +328,13 @@ python setup.py install
         </ul>
           <li><b>文生视频</b></li>
         <ul>
-           <li><a href="ppdiffusers/examples/lvdm">LVDM</a></li>
+           <li><a href="ppdiffusers/examples/text_to_video_lvdm">LVDM</a></li>
            <li><a href="ppdiffusers/examples/stable_video_diffusion">SVD</a></li>
            <li><a href="ppdiffusers/examples/AnimateAnyone">AnimateAnyone</a></li>
            <li><a href="ppdiffusers/examples/Open-Sora">OpenSora</a></li>
+           <li><a href="ppdiffusers/ppdiffusers/pipelines/animatediff">AnimateDiff</a></li>
+           <li><a href="ppdiffusers/ppdiffusers/pipelines/text_to_video_synthesis">zeroscope_v2_XL</a></li>
+           <li><a href="ppdiffusers/examples/cogvideo">CogVideoX</a></li>
         </ul>
         </ul>
           <li><b>音频生成</b></li>
